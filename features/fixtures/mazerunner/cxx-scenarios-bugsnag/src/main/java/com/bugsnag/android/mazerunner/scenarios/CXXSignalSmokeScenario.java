@@ -15,6 +15,7 @@ import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -81,7 +82,9 @@ public class CXXSignalSmokeScenario extends Scenario {
                 + " people talk about nothing? I've had twelve years to think about it. And if I "
                 + "had it to do over again, I would have grabbed the phaser and pointed "
                 + "it at you instead of them.");
-        Bugsnag.addMetadata("fruit", "apple", "gala");
+        Bugsnag.addMetadata("fruit", new HashMap<String, Object>() {{
+            put("apple", "gala");
+        }});
 
         Bugsnag.startSession();
         Bugsnag.leaveBreadcrumb("CXXSignalSmokeScenario");
