@@ -106,6 +106,7 @@ Scenario: Signal raised with overwritten config
     And the exception "errorClass" equals "SIGSEGV"
     And the exception "message" equals "Segmentation violation (invalid memory reference)"
     And the exception "type" equals "c"
+    And the event "context" equals "CXXSignalSmokeScenario"
     And the event "unhandled" is true
     And the event "severity" equals "error"
     And the event "severityReason.type" equals "signal"
