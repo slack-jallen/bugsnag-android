@@ -13,3 +13,10 @@ dependencies {
 }
 
 apply from: "../gradle/kotlin.gradle"
+
+android {
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 30
+    }
+}
