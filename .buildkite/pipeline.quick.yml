@@ -14,7 +14,7 @@ steps:
           - "features/smoke_tests"
           - "--app=/app/build/release/fixture-r16.apk"
           - "--farm=bs"
-          - "--device=ANDROID_5_0"
+          - "--device=ANDROID_5_0_SAMSUNG_GALAXY_S6"
           - "--fail-fast"
     concurrency: 9
     concurrency_group: 'browserstack-app'

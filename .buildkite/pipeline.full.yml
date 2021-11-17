@@ -110,7 +110,7 @@ steps:
           - "--exclude=features/full_tests/[^a-m].*.feature"
           - "--app=/app/build/release/fixture-r16.apk"
           - "--farm=bs"
-          - "--device=ANDROID_5_0"
+          - "--device=ANDROID_5_0_SAMSUNG_GALAXY_S6"
           - "--fail-fast"
     concurrency: 9
     concurrency_group: 'browserstack-app'
@@ -134,7 +134,7 @@ steps:
           - "--exclude=features/full_tests/[^n-z].*.feature"
           - "--app=/app/build/release/fixture-r16.apk"
           - "--farm=bs"
-          - "--device=ANDROID_5_0"
+          - "--device=ANDROID_5_0_SAMSUNG_GALAXY_S6"
           - "--fail-fast"
     concurrency: 9
     concurrency_group: 'browserstack-app'
