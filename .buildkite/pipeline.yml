@@ -172,6 +172,7 @@ steps:
           - "features/smoke_tests"
           - "--app=/app/build/release/fixture-r16.apk"
           - "--farm=bs"
+          - "--device=ANDROID_4_4_SAMSUNG_GALAXY_NOTE_4"
           - "--device=ANDROID_4_4"
           - "--fail-fast"
     concurrency: 9
