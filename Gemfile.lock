@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/bugsnag/maze-runner
-  revision: 4064b2e7c2f052af77f11e26f8baf6130a3b7324
+  revision: 70621a74ea2a53a69a78a0bd9e263170b2212f4a
+  branch: tms/sauce-labs-fixes
   specs:
     bugsnag-maze-runner (6.6.2)
       appium_lib (~> 11.2.0)

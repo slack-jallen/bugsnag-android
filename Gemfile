@@ -6,7 +6,6 @@ source "https://rubygems.org"
 # Or a specific release:
 #gem 'bugsnag-maze-runner', git: 'https://github.com/bugsnag/maze-runner', tag: 'v6.3.0'
 
-# Or follow master:
-gem 'bugsnag-maze-runner', git: 'https://github.com/bugsnag/maze-runner'
+gem 'bugsnag-maze-runner', git: 'https://github.com/bugsnag/maze-runner', branch: 'tms/sauce-labs-fixes'
 
 gem "license_finder", "~> 6.13"
