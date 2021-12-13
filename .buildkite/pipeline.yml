@@ -45,6 +45,28 @@ steps:
       TEST_FIXTURE_NAME: "fixture-r21.apk"
       BUILD_TASK: "assembleRelease"
 
+  - label: ':android: Android 5 NDK r21 - Sauce Labs'
+    depends_on: "fixture-r21"
+    timeout_in_minutes: 120
+    plugins:
+      artifacts#v1.2.0:
+        download: "build/release/fixture-r21.apk"
+        upload: "maze_output/failed/**/*"
+      docker-compose#v3.7.0:
+        pull: android-maze-runner
+        run: android-maze-runner
+        command:
+          - "features/full_tests"
+          - "--app=/app/build/release/fixture-r21.apk"
+          - "--farm=sl"
+          - "--device=Motorola_Moto_X_real_us"
+          - "--os=android"
+          - "--os-version=5"
+          #- "--fail-fast"
+    concurrency: 2
+    concurrency_group: 'sauce-labs'
+    concurrency_method: eager
+
   - label: ':android: Android 12 NDK r21 - Sauce Labs'
     depends_on: "fixture-r21"
     timeout_in_minutes: 120
@@ -62,7 +84,7 @@ steps:
           - "--device=Google_Pixel_6_real_us"
           - "--os=android"
           - "--os-version=12"
-          - "--fail-fast"
+          #- "--fail-fast"
     concurrency: 2
     concurrency_group: 'sauce-labs'
     concurrency_method: eager
@@ -84,7 +106,7 @@ steps:
           - "--device=Google_Pixel_3_real_us1"
           - "--os=android"
           - "--os-version=11"
-          - "--fail-fast"
+          #- "--fail-fast"
     concurrency: 2
     concurrency_group: 'sauce-labs'
     concurrency_method: eager
@@ -106,7 +128,7 @@ steps:
           - "--device=Google_Pixel_3a_XL_real"
           - "--os=android"
           - "--os-version=10"
-          - "--fail-fast"
+          #- "--fail-fast"
     concurrency: 2
     concurrency_group: 'sauce-labs'
     concurrency_method: eager
@@ -128,7 +150,7 @@ steps:
           - "--device=Motorola_Moto_G7_real"
           - "--os=android"
           - "--os-version=9"
-          - "--fail-fast"
+          #- "--fail-fast"
     concurrency: 2
     concurrency_group: 'sauce-labs'
     concurrency_method: eager
@@ -150,7 +172,7 @@ steps:
           - "--device=Motorola_Moto_G5_Plus_real"
           - "--os=android"
           - "--os-version=8"
-          - "--fail-fast"
+          #- "--fail-fast"
     concurrency: 2
     concurrency_group: 'sauce-labs'
     concurrency_method: eager
@@ -172,7 +194,7 @@ steps:
           - "--device=Motorola_Moto_X_Play_real"
           - "--os=android"
           - "--os-version=7"
-          - "--fail-fast"
+          #- "--fail-fast"
     concurrency: 2
     concurrency_group: 'sauce-labs'
     concurrency_method: eager
@@ -194,7 +216,7 @@ steps:
           - "--device=Samsung_Galaxy_J7_real_us"
           - "--os=android"
           - "--os-version=6"
-          - "--fail-fast"
+          #- "--fail-fast"
     concurrency: 2
     concurrency_group: 'sauce-labs'
     concurrency_method: eager
