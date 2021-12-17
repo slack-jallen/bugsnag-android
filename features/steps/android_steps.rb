@@ -17,7 +17,7 @@ When('any dialog is cleared and the element {string} is present') do |element_id
     $logger.info "System dialog cleared, reattempting wait_for_element" if clicked
   end
 
-  assert(present, "The element #{element_id} could not be found")
+  Maze.check.true(present, "The element #{element_id} could not be found")
 end
 
 When("I run {string}") do |event_type|
@@ -89,9 +89,7 @@ end
 Then("the exception reflects a signal was raised") do
   value = Maze::Helper.read_key_path(Maze::Server.errors.current[:body], "events.0.exceptions.0")
   error_class = value["errorClass"]
-  Maze.check.block("The errorClass was not from a signal: #{error_class}") do
-    %w[SIGFPE SIGILL SIGSEGV SIGABRT SIGTRAP SIGBUS].include? error_class
-  end
+  Maze.check.include(%w[SIGFPE SIGILL SIGSEGV SIGABRT SIGTRAP SIGBUS], error_class)
 end
 
 Then("the exception {string} equals one of:") do |keypath, possible_values|
@@ -121,8 +119,14 @@ Then("the first significant stack frame methods and files should match:") do |ex
     test_frame = significant_frames[index]
     method_match_a = expected_frame[0] == test_frame[:method]
     method_match_b = expected_frame[1] == test_frame[:method]
-    assert(method_match_a || method_match_b, "'#{test_frame[:method]}' in frame #{test_frame[:index]} is not equal to '#{expected_frame[0]}' or '#{expected_frame[1]}'")
-    assert(test_frame[:file].end_with?(expected_frame[2]), "'#{test_frame[:file]}' in frame #{test_frame[:index]} does not end with '#{expected_frame[2]}'")
+    Maze.check.true(
+      method_match_a || method_match_b,
+      "'#{test_frame[:method]}' in frame #{test_frame[:index]} is not equal to '#{expected_frame[0]}' or '#{expected_frame[1]}'"
+    )
+    Maze.check.true(
+      test_frame[:file].end_with?(expected_frame[2]),
+      "'#{test_frame[:file]}' in frame #{test_frame[:index]} does not end with '#{expected_frame[2]}'"
+    )
   end
 end
 
@@ -260,9 +264,7 @@ end
 
 Then("the event binary arch field is valid") do
   arch = Maze::Helper.read_key_path(Maze::Server.errors.current[:body], "events.0.app.binaryArch")
-  Maze.check.block "'#{arch}' is not a valid value for app.binaryArch" do
-    %w[x86 x86_64 arm32 arm64].include? arch
-  end
+  Maze.check.include(%w[x86 x86_64 arm32 arm64], arch)
 end
 
 Then("the event stacktrace identifies the program counter") do
