@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/bugsnag/maze-runner
-  revision: 722d9f2c42015b83e596afff9566d2fbb242b974
-  branch: tms/use-maze-check
+  revision: a24ec4f7ae185ff48b5f02bb1a9b0e4bfa9a7c27
+  branch: tms/timers
   specs:
     bugsnag-maze-runner (6.8.0)
       appium_lib (~> 11.2.0)
@@ -9,12 +9,13 @@ GIT
       cucumber (~> 7.1)
       cucumber-expressions (~> 6.0.0)
       curb (~> 0.9.6)
+      minitest (~> 5.0)
       optimist (~> 3.0.1)
       os (~> 1.0.0)
       rake (~> 12.3.3)
       rubyzip (~> 2.3.2)
       selenium-webdriver (~> 3.11)
-      test-unit (~> 3.5.2)
+      test-unit (~> 3.3.0)
       webrick (~> 1.7.0)
 
 GEM
@@ -81,6 +82,7 @@ GEM
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.1115)
+    minitest (5.15.0)
     multi_test (0.1.2)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
@@ -96,7 +98,7 @@ GEM
       rubyzip (>= 1.2.2)
     sys-uname (1.2.2)
       ffi (~> 1.1)
-    test-unit (3.5.2)
+    test-unit (3.3.9)
       power_assert
     thor (1.0.1)
     tomlrb (1.3.0)
