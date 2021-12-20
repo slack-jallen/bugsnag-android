@@ -59,7 +59,7 @@ services:
       BUILDKITE_REPO:
 
   android-maze-runner:
-    image: 855461928731.dkr.ecr.us-west-1.amazonaws.com/maze-runner:integration-bitbar
+    image: 855461928731.dkr.ecr.us-west-1.amazonaws.com/maze-runner:integration-bitbar-cli
     environment:
       DEBUG:
       BUILDKITE:
