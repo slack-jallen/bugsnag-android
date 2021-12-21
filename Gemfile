@@ -4,7 +4,7 @@ source "https://rubygems.org"
 #gem 'bugsnag-maze-runner', path: '../maze-runner'
 
 # Or a specific release:
-gem 'bugsnag-maze-runner', git: 'https://github.com/bugsnag/maze-runner', branch: 'tms/check-fixes'
+gem 'bugsnag-maze-runner', git: 'https://github.com/bugsnag/maze-runner', branch: 'tms/maze-check-21-dec'
 
 # Or follow master:
 #gem 'bugsnag-maze-runner', git: 'https://github.com/bugsnag/maze-runner'

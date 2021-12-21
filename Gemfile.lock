@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/bugsnag/maze-runner
   revision: d3d4cf0e67d15fcee7409aefeb13b612b00586a6
-  branch: tms/check-fixes
+  branch: tms/maze-check-21-dec
   specs:
     bugsnag-maze-runner (6.8.0)
       appium_lib (~> 11.2.0)
