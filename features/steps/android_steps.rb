@@ -23,7 +23,7 @@ end
 When("I run {string}") do |event_type|
   steps %Q{
     Given any dialog is cleared and the element "scenario_name" is present
-    When I send the keys "#{event_type}" to the element "scenario_name"
+    When I set the value of element "scenario_name" to "#{event_type}"
     And I click the element "run_scenario"
   }
 end
@@ -44,7 +44,7 @@ end
 When("I configure Bugsnag for {string}") do |event_type|
   steps %Q{
     Given any dialog is cleared and the element "scenario_name" is present
-    When I send the keys "#{event_type}" to the element "scenario_name"
+    When I set the value of element "scenario_name" to "#{event_type}"
     And I click the element "start_bugsnag"
   }
 end
@@ -81,7 +81,7 @@ end
 When("I configure the app to run in the {string} state") do |event_metadata|
   steps %Q{
     Given any dialog is cleared and the element "scenario_metadata" is present
-    And I send the keys "#{event_metadata}" to the element "scenario_metadata"
+    And I set the value of element "scenario_metadata" to "#{event_metadata}"
   }
 end
 
