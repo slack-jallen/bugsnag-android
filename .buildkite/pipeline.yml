@@ -109,7 +109,7 @@ steps:
           - "--app=/app/build/release/fixture-r21.apk"
           - "--farm=bb"
           - "--os-version=10"
-          - "--device=ANDROID_10"
+          - "--device=ANDROID_10_0"
           - "--fail-fast"
           - "--os=android"
     concurrency: 2
@@ -131,7 +131,7 @@ steps:
           - "--app=/app/build/release/fixture-r21.apk"
           - "--farm=bb"
           - "--os-version=10"
-          - "--device=ANDROID_10"
+          - "--device=ANDROID_10_0"
           - "--fail-fast"
           - "--os=android"
     concurrency: 2
